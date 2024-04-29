@@ -1,0 +1,6 @@
+Flask==2.2.2
+gdown==5.1.0
+nltk==3.7
+ro_diacritics==0.9.4.2
+tqdm==4.64.1
+transformers==4.24.0
