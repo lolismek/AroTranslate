@@ -1,6 +1,6 @@
 from transformers import AutoModelForSeq2SeqLM
 from transformers import NllbTokenizer
-from tqdm.auto import tqdm
+#from tqdm.auto import tqdm
 from ro_diacritics import restore_diacritics
 
 import nltk
