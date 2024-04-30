@@ -6,11 +6,6 @@ from ro_diacritics import restore_diacritics
 import nltk
 nltk.download('punkt')
 
-import gdown
-google_drive_url = 'https://drive.google.com/drive/folders/1-jgJ0y0yZpBABzK0DFMLx39uys_GlnmZ?usp=sharing'
-model_save_path = '/ron-rup-v2'
-gdown.download_folder(google_drive_url, quiet = False)
-
 model_load_name = 'ron-rup-v2'
 model = AutoModelForSeq2SeqLM.from_pretrained(model_load_name)
 tokenizer = NllbTokenizer.from_pretrained(model_load_name)
