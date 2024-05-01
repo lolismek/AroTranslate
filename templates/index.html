@@ -60,16 +60,19 @@
     .normal-text {
       font-weight: normal;
     }
+    ::placeholder {
+        color: #b2b2b2 !important; /* Change placeholder text color */
+    }
 </style>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AroConnect</title>
+    <title>AroTranslate</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 <body class="p-4 mb-2 custom-bg text-light">
     <nav class="navbar navbar-expand-lg navbar-dark custom-nav rounded">
-            <h1 class="navbar-brand px-4 pt-2"><a class="nav-link" href="/">AroConnect - The Aromanian Translator</a></h1>
+            <h1 class="navbar-brand px-4 pt-2"><a class="nav-link" href="/">AroTranslate</a></h1>
             <div class="collapse navbar-collapse justify-content-end px-4">
                 <ul class="navbar-nav flex-grown-1 text-right">
                     <li class="nav-item">
@@ -87,6 +90,7 @@
                 <p class="m-0 me-5">Language:</p>
                 <div class="card custom-text-area custom-paragraph me-1">
                     <p id="from-lang" class="m-0">RON</p>
+                    
                 </div>
                 <div id="swap-button" class="btn btn-outline-secondary btn-no-border me-1"><i class="fa fa-exchange"></i></div>
                 <div class="card custom-text-area custom-paragraph">
@@ -95,6 +99,7 @@
                 <div id="loading-spinner" class="spinner-border text-light" style="display: none;">
                     <span class="sr-only">Loading...</span>
                 </div>
+                <div id="switch-button" class="btn btn-secondary">switch RON/ENG</div>
             </div>
         </div>
         <br>
@@ -103,7 +108,7 @@
             
            <div id="boxes-container">
                 <form id="translation-form">
-                    <textarea id="text_to_translate" class="box-content pb-2 form-control custom-text-area border border-0 border-white text-light" name="text_to_translate" rows="15" cols="10" style="resize: none;"></textarea>
+                    <textarea id="text_to_translate" class="box-content pb-2 form-control custom-text-area border border-0 border-white text-light" name="text_to_translate" rows="15" cols="10" style="resize: none;" placeholder="Type something in selected language..."></textarea>
                     <br>
                     <div class="row">
                         <div class="col-sm">
@@ -141,38 +146,8 @@
     </div>
 
 
-    <!--<div class="container">
-        <div class="row">
-            <div class="col-md-6">
-                <div id="boxes-container">
-                    <select id="from_language" class="form-select custom-text-area border border-0 border-white text-light">
-                        <option value="aromanian">Aromanian</option>
-                    </select>
-                    <br>
-
-                    <form id="translation-form">
-                        <textarea id="text_to_translate" class="box-content pb-2 form-control no-resize custom-text-area border border-0 border-white text-light" name="text_to_translate" rows="15" cols="10"></textarea><br><br>
-                        <input type="button" id="translate-button" value="Translate" class="btn btn-primary">
-                    </form>
-
-                </div>
-            </div>
-            <div class="col-md-6">
-                <div id="boxes-container">
-                    <select id="to_language" class="form-select custom-text-area border border-0 border-white text-light">
-                        <option value="romanian">Romanian</option>
-                        <option value="english">English</option>
-                    </select>
-                    <br>
-
-                    <div id="translated_text" class="box-content pb-2 form-control no-resize custom-text-area border border-0 border-white text-light" rows="15" cols="10" style="resize: none;">
-                    </div> 
-                </div>
-            </div>
-        </div>
-    </div> -->
-
     <script>
+
     $(document).ready(function() {
         var textarea1 = document.getElementById("text_to_translate");
         var wordCountDisplay1 = document.getElementById("wordCount1");
@@ -236,6 +211,21 @@
                 }
             });
         });
+
+        $("#switch-button").click(function() {
+            var from_lang = document.getElementById('from-lang').textContent;
+            var to_lang = document.getElementById('to-lang').textContent;
+
+            if(from_lang === "RON"){
+                $('#from-lang').text("ENG");
+            }else if(to_lang === "RON"){
+                $('#to-lang').text("ENG");
+            }else if(from_lang === "ENG"){
+                $('#from-lang').text("RON");
+            }else if(to_lang === "ENG"){
+                $('#to-lang').text("RON");
+            }
+        })
 
         $("#swap-button").click(function() {
             var from_lang = document.getElementById('from-lang').textContent;

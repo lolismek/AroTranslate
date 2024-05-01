@@ -1,0 +1,7 @@
+www.jerpelea.com {
+    reverse_proxy localhost:8000
+}
+
+jerpelea.com {
+    reverse_proxy localhost:5000
+}

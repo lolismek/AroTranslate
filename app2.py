@@ -3,6 +3,14 @@ from transformers import NllbTokenizer
 #from tqdm.auto import tqdm
 from ro_diacritics import restore_diacritics
 
+from deep_translator import GoogleTranslator 
+
+def english_trans(text, from_lang, to_lang):
+    if from_lang == 'eng':
+        return GoogleTranslator(source='en', target='ro').translate(text)
+    else:
+        return GoogleTranslator(source='ro', target='en').translate(text)
+
 import nltk
 nltk.download('punkt')
 
@@ -197,18 +205,20 @@ def translate():
     from_lang = from_lang.lower()
     to_lang = to_lang.lower()
 
+    if from_lang == 'eng':
+        text_to_translate = english_trans(text_to_translate, from_lang, 'ron')
+
     #translated_text = Translate(text_to_translate)
     translated_text = Big_Translate(text_to_translate, from_lang, to_lang)
+
+    if to_lang == 'eng':
+        translated_text = english_trans(translated_text, 'ron', 'eng')
 
     return jsonify({'translated_text': translated_text})
 
 @app.route('/about')
 def index2():
     return render_template('about_us.html')
-
-
-if __name__ == '__main__':
-    app.run(debug=True, port=81, host="0.0.0.0")
 
 #API Request Failed: GET /api/v4/accounts/7f2c6bb78151b4a5cd5f00cc060fad04/workers/domains/records?zone_id=03cfc989cfa5be94a5258fed4b6f2cdc (undefined)
 # "before-piatra" works better than "after-piatra" !!! 

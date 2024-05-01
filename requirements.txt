@@ -5,3 +5,5 @@ ro_diacritics==0.9.4.2
 transformers==4.24.0
 gunicorn==20.1.0
 Werkzeug==2.2.2
+sentencepiece==0.2.0
+deep-translator==1.11.4
