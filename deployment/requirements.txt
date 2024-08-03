@@ -1,0 +1,4 @@
+ctranslate2==4.3.1
+Flask==2.2.2
+razdel==0.5.0
+transformers==4.42.3
