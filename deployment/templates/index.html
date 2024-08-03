@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom Translator</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        body {
+            background-color: #f1f1f1;
+            font-family: Arial, sans-serif;
+        }
+
+        h1 {
+            font-weight: bold;
+        }
+
+        textarea {
+            resize: none;
+        }
+
+        button {
+            font-size: 14px;
+            padding: 8px 12px;
+        }
+
+        select {
+            font-size: 16px;
+            padding: 10px;
+        }
+
+        .custom-select {
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            background: url('data:image/svg+xml;utf8,<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 9l-7 7-7-7"></path></svg>') no-repeat right 10px center;
+            background-color: #fff;
+            background-size: 16px;
+        }
+
+        .custom-select:focus {
+            border-color: #007bff;
+            box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+        }
+
+        textarea, select {
+            border: 1px solid #ced4da;
+            border-radius: 0.25rem;
+        }
+
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        @media (max-width: 767.98px) {
+            .container {
+                padding: 10px;
+            }
+
+            h1 {
+                font-size: 1.5rem;
+            }
+
+            textarea {
+                height: 100px;
+            }
+        }
+
+
+        .textarea-container {
+            position: relative;
+        }
+
+        .copy-button, .swap-button {
+            position: absolute;
+            bottom: 10px;
+            background: none;
+            border: none;
+            font-size: 20px;
+            color: #007bff;
+            cursor: pointer;
+        }
+
+        .copy-button {
+            right: 10px;
+        }
+
+        .swap-button {
+            left: 10px;
+        }
+
+        .copy-button:hover, .swap-button:hover {
+            color: #0056b3;
+        }
+
+        .copy-button:focus, .swap-button:focus {
+            outline: none;
+        }
+
+        .form-group {
+            position: relative;
+        }
+
+        .dropdown-menu {
+            z-index: 1000; /* Ensure dropdown menu is on top */
+        }
+        .custom-heading p {
+            color: #6c757d; /* Slightly grey color */
+            font-weight: 510; /* Thicker font weight */
+            margin-bottom: 0;
+        }
+
+        .no-style {
+            color: inherit;         /* Remove default link color */
+           
+            text-decoration: none;  /* Remove underline */
+        }
+        .no-style:hover,
+        .no-style:focus,
+        .no-style:visited,
+        .no-style:active {
+            color: inherit;          /* Ensure color is inherited */
+            text-decoration: none;   /* Ensure no underline */
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="row d-flex align-items-center">
+            <div class="col-6 text-left">
+                <a href="/" class="no-style"><h3><b>AroTranslate</b></h3></a>
+            </div>
+
+            <div class="col-6 d-flex justify-content-end align-items-center">
+                <div class="dropdown me-3">
+                    <a class="nav-link dropdown-toggle" href="#" id="dropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        English
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                        <li><a class="dropdown-item active" href="#" onclick="setLang('en')">English</a></li>
+                        <li><a class="dropdown-item" href="#" onclick="setLang('rup')">Armãnã</a></li>
+                        <li><a class="dropdown-item" href="#" onclick="setLang('ron')">Românǎ</a></li>
+                    </ul>
+                </div>
+                <a href="/about" class="custom-heading"><p id="about-us">About Us</p></a>
+            </div>
+        </div>
+    </div>
+
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-md-6 mb-3">
+                <div class="form-group">
+                    <div class="dropdown">
+                        <button class="btn btn-outline-secondary dropdown-toggle" type="button" id="dropdownInputLanguage" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Aromanian
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownInputLanguage">
+                            <h6 class="dropdown-header" id="language-info1">Language</h6>
+                            <a class="dropdown-item" href="#" id="rup-option1" data-value="rup">Aromanian</a>
+                            <a class="dropdown-item" href="#" id="ron-option1" data-value="ron">Romanian</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group textarea-container">
+                    <textarea id="inputText" class="form-control" rows="5" placeholder="Enter text here"></textarea>
+                    <button id="copyInputText" class="copy-button" title="Copy">
+                        <i class="fas fa-copy"></i>
+                    </button>
+                </div>
+                <button id="translate-button" class="btn btn-primary btn-sm">Translate</button>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <div class="dropdown">
+                        <button class="btn btn-outline-secondary dropdown-toggle" type="button" id="dropdownOutputLanguage" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Romanian
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownOutputLanguage">
+                            <h6 class="dropdown-header" id="language-info2">Language</h6>
+                            <a class="dropdown-item" href="#" id="ron-option2" data-value="ron">Romanian</a>
+                            <a class="dropdown-item" href="#" id="rup-option2" data-value="rup">Aromanian</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group textarea-container">
+                    <textarea id="outputText" class="form-control" rows="5" placeholder="Translation will appear here" readonly></textarea>
+                    <button id="copyOutputText" class="copy-button" title="Copy">
+                        <i class="fas fa-copy"></i>
+                    </button>
+                    <button id="swapButton" class="swap-button" title="Swap">
+                        <i class="fas fa-exchange-alt"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="script.js"></script>
+    <script>
+        function setLang(lang) {
+            console.log("!!")
+            let contents = {
+                "ron": {
+                    "translate-button": "Traduce",
+                    "language-info1": "Limbă",
+                    "language-info2": "Limbă",
+                    "ron-option1": "Română",
+                    "rup-option1": "Aromână",
+                    "ron-option2": "Română", 
+                    "rup-option2": "Aromână",
+                    "dropdownInputLanguage": "Aromână",
+                    "dropdownOutputLanguage": "Română",
+                    "inputText": "Scrie text aici",
+                    "outputText": "Aici va apărea traducerea",
+                    "about-us": "Despre Noi"
+                },
+                "rup": {  
+                    "translate-button": "Apridutse",
+                    "language-info1": "Limbã",
+                    "language-info2": "Limbã",
+                    "ron-option1": "Romãnã",
+                    "rup-option1": "Armãnã",
+                    "ron-option2": "Romãnã", 
+                    "rup-option2": "Armãnã",
+                    "dropdownInputLanguage": "Armãnã",
+                    "dropdownOutputLanguage": "Romãnã",
+                    "inputText": "Ascrie aua",
+                    "outputText": "Apridutserea va s'iasã aoa",
+                    "about-us": "Ti Noi" 
+                },
+                "en": {  
+                    "translate-button": "Translate",
+                    "language-info1": "Language",
+                    "language-info2": "Language",
+                    "ron-option1": "Romanian",
+                    "rup-option1": "Aromanian",
+                    "ron-option2": "Romanian", 
+                    "rup-option2": "Aromanian",
+                    "dropdownInputLanguage": "Aromanian",
+                    "dropdownOutputLanguage": "Romanian",
+                    "inputText": "Enter text here",
+                    "outputText": "Translation will appear here",
+                    "about-us": "About Us"
+                }
+            }
+        
+            ids = ["translate-button", "language-info1", "language-info2", "ron-option1", "rup-option1", "ron-option2", "rup-option2", "dropdownInputLanguage", "dropdownOutputLanguage", "inputText", "outputText", "about-us"]
+            for (var i = 0; i < ids.length; i++){
+                if (ids[i] == "inputText" || ids[i] == "outputText"){
+                    var thing = document.getElementById(ids[i])
+                    console.log(thing)
+                    thing.setAttribute('placeholder', contents[lang][ids[i]])
+                }else{
+                    var thing = document.getElementById(ids[i])
+                    thing.textContent = contents[lang][ids[i]]
+                }
+            }
+        }
+
+        $(document).ready(function() {
+            $('.dropdown-toggle').on('click', function() {
+                var $this = $(this);
+                var $dropdownMenu = $this.next('.dropdown-menu');
+                
+                $dropdownMenu.toggleClass('show');
+                
+                $(document).on('click', function(e) {
+                    if (!$this.is(e.target) && $this.has(e.target).length === 0) {
+                        $dropdownMenu.removeClass('show');
+                    }
+                });
+            });
+
+            $('.dropdown-item').on('click', function() {
+                var $this = $(this);
+                var $dropdownToggle = $this.closest('.dropdown').find('.dropdown-toggle');
+                $dropdownToggle.text($this.text());
+                $dropdownToggle.data('value', $this.data('value'));
+            });
+        });
+
+        document.getElementById('copyInputText').addEventListener('click', function() {
+            const inputText = document.getElementById('inputText');
+            inputText.select();
+            document.execCommand('copy');
+        });
+
+        document.getElementById('copyOutputText').addEventListener('click', function() {
+            const outputText = document.getElementById('outputText');
+            outputText.select();
+            document.execCommand('copy');
+        });
+
+        document.getElementById('swapButton').addEventListener('click', function() {
+            var inputDropdown = document.getElementById('dropdownInputLanguage');
+            var outputDropdown = document.getElementById('dropdownOutputLanguage');
+            var tempText = inputDropdown.textContent;
+            var tempValue = inputDropdown.getAttribute('data-value');
+
+            inputDropdown.textContent = outputDropdown.textContent;
+            inputDropdown.setAttribute('data-value', outputDropdown.getAttribute('data-value'));
+
+            outputDropdown.textContent = tempText;
+            outputDropdown.setAttribute('data-value', tempValue);
+
+            var inputText = document.getElementById('inputText').value;
+            var outputText = document.getElementById('outputText').value;
+
+            document.getElementById('inputText').value = outputText;
+            document.getElementById('outputText').value = inputText;
+        });
+
+        document.getElementById('translate-button').addEventListener('click', function() {
+            var inputText = document.getElementById('inputText').value;
+            var inputLanguage = document.getElementById('dropdownInputLanguage').textContent;
+            var outputLanguage = document.getElementById('dropdownOutputLanguage').textContent;
+
+            var requestData = {
+                input_text: inputText,
+                input_language: inputLanguage,
+                output_language: outputLanguage
+            };
+
+            document.getElementById('outputText').value = 'Translating...';
+
+            fetch('/translate', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(requestData)
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data && data.translated_text) {
+                    document.getElementById('outputText').value = data.translated_text;
+                } else {
+                    console.error('Error: Translation not found.');
+                    document.getElementById('outputText').value = 'Error: Translation not found.';
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                document.getElementById('outputText').value = 'Error: Unable to translate.';
+            });
+        });
+      
+    </script>
+</body>
+</html>
