@@ -4,7 +4,7 @@ from transformers import AutoModelForSeq2SeqLM, AutoTokenizer, NllbTokenizer
 import ctranslate2
 import razdel
 
-model_load_name = '../models/ctranslate2_iter5-49999'
+model_load_name = 'NLLB-aromanian-romanian-v1-ctranslate2'
 
 model = ctranslate2.Translator(model_load_name)
 tokenizers = {
