@@ -61,8 +61,7 @@ The model relies on language tokens to identify the source and target language, 
 
 Altough it is common for translations towards the better documented language to achieve higher scores, a BLEU score difference of almost 20 points is shocking. We hypothesize that the Aromanian - Romanian case is special, as the two have very similar syntax and structure (the main difering point being the vocabulary ad-stratum). Thus, it is very easy for the model to infer meaning from the mere syntax (note that Romanian is one of the languages NLLB has been pretrained on). The same can not be said about the other direction. Nonetheless, this remaines a topic for further study.
 
-Lastly, we ought to mention about the LaBSE model. It has been trained for 70k steps with the sole purpose of embedding Aromanian and Romanian sentences in a commomn space. It yileds accurate results and by applying Dynamic Programming we obtain a quadratic time complexity reliable document aligner for the language pair. 
-
+Lastly, we ought to mention about the LaBSE model. It has been trained for 70k steps with the sole purpose of embedding Aromanian and Romanian sentences in a commomn space. It yields accurate results and with dynamic programming we obtain a quadratic time complexity document aligner for the language pair. 
 
 
 ## Deployment
