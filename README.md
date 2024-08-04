@@ -103,4 +103,4 @@ We are constantly seeking to to improve the translator, be it through more data 
 
 ## Acknowledgments
 
-
+There are many people and organizations to thank. Still compiling a comprehensive list, as we are in the process of deployment. 
