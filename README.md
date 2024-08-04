@@ -8,13 +8,13 @@ We present the first comprehensive Aromanian Translator, a 100k+ sentences aroma
 </div>
 
 ## Table of contents
-- [Motivation](#motivation)
+- [Motivation](#Motivation)
 - [Deliverables](##Deliverables)
-- [Data collection, preprocessing & training](##Training)
-- [Deployment](##Deployment)
+- [Data collection, preprocessing & training](#Data-collection,-preprocessing-&-training)
+- [Deployment](#Deployment)
 - [License](#License)
-- [Contribute](##Future-challenges)
-- [Acknowledgments](##Acknowledgments)
+- [Contribute](#Contribute)
+- [Acknowledgments](#Acknowledgments)
 
 ## Motivation
 
@@ -101,6 +101,6 @@ python main.py
 
 We are constantly seeking to to improve the translator, be it through more data added to the corpus, more computational power for training, better resources for deployment, etc. Any contribution to the project is highly appreciated and can do the Aromanian speakers a world of good. Please contact us at: `alex.jerpelea@gmail.com`
 
-
+## Acknowledgments
 
 
