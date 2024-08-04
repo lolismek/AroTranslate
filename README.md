@@ -10,7 +10,7 @@ We present the first comprehensive Aromanian Translator, a 100k+ sentences aroma
 ## Table of contents
 - [Motivation](#Motivation)
 - [Deliverables](##Deliverables)
-- [Data collection, preprocessing & training](#Data-collection,-preprocessing-&-training)
+- [Data collection, preprocessing & training](#data-collection-preprocessing--training)
 - [Deployment](#Deployment)
 - [License](#License)
 - [Contribute](#Contribute)
