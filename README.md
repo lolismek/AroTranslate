@@ -6,3 +6,24 @@ This repository contains the deployment of the first automatic translator for Ar
 Unquanitzed model [here](https://huggingface.co/alexjerpelea/NLLB-aromanian-romanian-v1) and quantized model [here](https://huggingface.co/alexjerpelea/NLLB-aromanian-romanian-v1-ctranslate2). Collected dataset [here](https://huggingface.co/datasets/alexjerpelea/aromanian-romanian-MT-corpus). Please request access as all of these are gated. 
 
 # Deployment code
+
+Install requirements
+```
+pip install -r requirements.txt
+```
+
+Login with huggingface using a token with access to the quanitzed model 
+```
+huggingface-cli login
+```
+
+Clone repo in deployment path
+```
+git clone https://huggingface.co/alexjerpelea/NLLB-aromanian-romanian-v1-ctranslate2
+```
+
+Local deploy 🤗
+```
+python main.py
+```
+
