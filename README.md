@@ -7,8 +7,6 @@ We present the first comprehensive Aromanian Translator, a 100k+ sentences aroma
   <p><em>"Bridging the gap", AI-generated </em></p>
 </div>
 
-
-
 ## Table of contents
 - [Motivation](##Motivation)
 - [Deliverables](##Deliverables)
@@ -31,43 +29,31 @@ This project, through the tools and data it presents, aims to:
 - allow young Aromanians (and not only) to reconnect with their languages
 - increase interest for this subject, especially within the academic medium
 
+## Deliverables
+The following are released:
+- [NLLB-200-600M](https://huggingface.co/facebook/nllb-200-distilled-600M) model finetuned for Aromanian - Romanian bidirectional translations, available on [huggingface](https://huggingface.co/alexjerpelea/NLLB-aromanian-romanian-v1). Soon also releasing a Aromanian - Romanian - English model, which will (hopefully) be more robust.
+- [Quantized version](https://huggingface.co/alexjerpelea/NLLB-aromanian-romanian-v1-ctranslate) (int8) of the model, using ctranslate2, for much faster inference. Deployable on CPU.
+- 100k+ sentences Aromanian - Romanian [corpus](https://huggingface.co/datasets/alexjerpelea/aromanian-romanian-MT-corpus). It is momentarily gated (for copyright concerns of various sources of the text content), so please request access and we will evaluate if your use case is eligible for recieving the dataset.
+- [Finetuned LaBSE model](https://huggingface.co/alexjerpelea/LaBSE-aromanian-romanian) for encoding Aromanian and Romanian sentences in the same embedding space, along text alignment class for easier future text mining, inspired by [this paper](https://arxiv.org/abs/2209.09368).
 
-# The first neural machine translation system for the Aromanian language
+# Deployment
 
-<br>
-Aromanian is an endangered Eastern Romance dialectal language spoken mainly in Greece, but also in Albania, North Macedonia, Romania, Bulgaria, Serbia and is most similar with Romanian. (wiki)
-<br> 
-This repository contains the deployment of the first automatic translator for Aromanian. Used NLLB-200-600M [1] for fine-tuning under the CC-BY-NC-4.0 license.
-<br>
-Delivering the unquanitzed model [2], quantized model [3], and romanian-aromanian corpus[4]. Please request access as all of these are momentarily gated.    
-<br>
-
-[1] https://huggingface.co/facebook/nllb-200-distilled-600M
-<br>
-[2] https://huggingface.co/alexjerpelea/NLLB-aromanian-romanian-v1
-<br>
-[3] https://huggingface.co/alexjerpelea/NLLB-aromanian-romanian-v1-ctranslate
-<br>
-[4] https://huggingface.co/datasets/alexjerpelea/aromanian-romanian-MT-corpus
-
-# Deployment code
-
-Locally clone the repo
+Locally clone the repo:
 ```
 git clone https://github.com/lolismek/AroTranslate.git
 ```
 
-Install requirements
+From now on, operate only inside the `deployment` folder. Install requirements:
 ```
 pip install -r requirements.txt
 ```
 
-Login with huggingface using a token with access to the quanitzed model 
+Login with huggingface using a token with access to the quanitzed model:
 ```
 huggingface-cli login
 ```
 
-Clone repo in deployment path
+Clone repo in deployment path:
 ```
 git clone https://huggingface.co/alexjerpelea/NLLB-aromanian-romanian-v1-ctranslate2
 ```
@@ -76,4 +62,8 @@ Local deploy 🤗
 ```
 python main.py
 ```
+
+## Preprocessing & Training
+
+
 
