@@ -93,5 +93,8 @@ Local deploy 🤗
 python main.py
 ```
 
+## License
+
+
 
 
