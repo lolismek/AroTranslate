@@ -22,7 +22,7 @@ Aromanian is an Eastern Romance language, part of the Proto-Romanian language fa
 <br><br>
 Spoken mainly in Greece, Albania, Romania but also North Macedonia, Bulgaria, and Serbia, the Aromanian language has the [endangered](https://endangeredlanguages.com/lang/963) status as speakers tend to assimilate more and more with their national language and culture, and do not pass the tongue to the new generations.
 <br><br>
-There are very little initiatives for supporting the Aromanian language, mostly due to the governments lack of support. It is only oficially recognized in [North Macedonia and Albania](https://en.wikipedia.org/wiki/Aromanian_language#:~:text=2021%20Australian%20census.-,Official%20status,subject%20in%20some%20primary%20schools.). 
+There are very little initiatives for supporting the Aromanian language, mostly due to the governments lack of help. It is only oficially recognized in [North Macedonia and Albania](https://en.wikipedia.org/wiki/Aromanian_language#:~:text=2021%20Australian%20census.-,Official%20status,subject%20in%20some%20primary%20schools.). 
 <br><br>
 This project, through the tools and data it presents, aims to:
 - make digital content more accesible
