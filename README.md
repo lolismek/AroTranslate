@@ -13,8 +13,7 @@ We present the first comprehensive Aromanian Translator, a 100k+ sentences aroma
 - [Data collection, preprocessing & training](##Training)
 - [Deployment](##Deployment)
 - [License](##License)
-- [Future challenges](##Future-challenges)
-- [Contributions](##Contributions)
+- [Contributions & future challenges](##Future-challenges)
 - [Acknowledgments](##Acknowledgments)
 
 ## Motivation
@@ -96,6 +95,9 @@ python main.py
 ## License
 
 <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc/4.0/88x31.png" /></a><br />This work (inlcuding but not limited to do the code, all the presented models, and the corpus) is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">Creative Commons Attribution-NonCommercial 4.0 International License</a>.
+
+## Contributions & future challenges
+
 
 
 
