@@ -17,6 +17,11 @@ Delivering the unquanitzed model [2], quantized model [3], and romanian-aromania
 
 # Deployment code
 
+Locally clone the repo
+```
+git clone https://github.com/lolismek/AroTranslate.git
+```
+
 Install requirements
 ```
 pip install -r requirements.txt
