@@ -31,8 +31,8 @@ This project, through the tools and data it presents, aims to:
 
 ## Deliverables
 The following are released:
-- [NLLB-200-600M](https://huggingface.co/facebook/nllb-200-distilled-600M) model finetuned for Aromanian - Romanian bidirectional translations, available on [huggingface](https://huggingface.co/alexjerpelea/NLLB-aromanian-romanian-v1). Soon also releasing a Aromanian - Romanian - English model, which will (hopefully) be more robust.
-- [Quantized version](https://huggingface.co/alexjerpelea/NLLB-aromanian-romanian-v1-ctranslate2) (int8) of the model, using ctranslate2, for much faster inference. Deployable on CPU.
+- [NLLB-200-600M](https://huggingface.co/facebook/nllb-200-distilled-600M) model finetuned for Aromanian - Romanian bidirectional translations, available on [huggingface](https://huggingface.co/alexjerpelea/NLLB-aromanian-romanian-v1). And a [quantized version](https://huggingface.co/alexjerpelea/NLLB-aromanian-romanian-v1-ctranslate2) (int8), using ctranslate2, for much faster inference. Deployable on CPU.
+- A [more robust version](https://huggingface.co/alexjerpelea/NLLB-aromanian-romanian-english), translating between any of: Aromanian, Romanian & English. And its similarly [quantized version](https://huggingface.co/alexjerpelea/NLLB-aromanian-romanian-english-ctranslate2).
 - 100k+ sentences Aromanian - Romanian [corpus](https://huggingface.co/datasets/alexjerpelea/aromanian-romanian-MT-corpus). It is momentarily gated (for copyright concerns of various sources of the text content), so please request access and we will evaluate if your use case is eligible for recieving the dataset.
 - [Finetuned LaBSE model](https://huggingface.co/alexjerpelea/LaBSE-aromanian-romanian) for encoding Aromanian and Romanian sentences in the same embedding space, along text alignment class for easier future text mining, inspired by [this paper](https://arxiv.org/abs/2209.09368).
 
