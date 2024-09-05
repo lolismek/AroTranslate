@@ -83,7 +83,7 @@ huggingface-cli login
 
 Clone repo in deployment path:
 ```
-git clone https://huggingface.co/alexjerpelea/NLLB-aromanian-romanian-english-ctranslate2
+git clone https://huggingface.co/alexjerpelea/NLLB-rup-ron-eng-ct2-v2
 ```
 
 Local deploy 🤗
