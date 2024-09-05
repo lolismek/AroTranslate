@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | AroTranslate</title>
+    <meta name="description" content="Learn about AroTranslate, our mission to preserve the endangered Aromanian language, and our state-of-the-art translation technology. Discover how we're making Aromanian more accessible in the digital world.">
+    <meta name="keywords" content="Aromanian translator, Aromanian, Romanian, Aromână, Traducător Aromână, Apridutse Armana, Armãneashti, Armãnã, AroTranslate, endangered languages, Balkan languages, online translator">
+    <link rel="canonical" href="https://www.arotranslate.com/about">
+    <meta property="og:title" content="About Us: AroTranslate">
+    <meta property="og:description" content="Discover AroTranslate's mission to preserve the endangered Aromanian language through innovative translation technology.">
+    <meta property="og:url" content="https://www.arotranslate.com/about">
+    <meta property="og:type" content="website">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        body {
+            background-color: #f1f1f1;
+            font-family: Arial, sans-serif;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        footer{
+            margin-top: auto;
+        }
+
+        h1 {
+            font-weight: bold;
+        }
+
+        textarea {
+            resize: none;
+        }
+
+        button {
+            font-size: 14px;
+            padding: 8px 12px;
+        }
+
+        select {
+            font-size: 16px;
+            padding: 10px;
+        }
+
+        .custom-select {
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            background: url('data:image/svg+xml;utf8,<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 9l-7 7-7-7"></path></svg>') no-repeat right 10px center;
+            background-color: #fff;
+            background-size: 16px;
+        }
+
+        .custom-select:focus {
+            border-color: #007bff;
+            box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+        }
+
+        textarea, select {
+            border: 1px solid #ced4da;
+            border-radius: 0.25rem;
+        }
+
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        @media (max-width: 767.98px) {
+            .container {
+                padding: 10px;
+            }
+
+            h1 {
+                font-size: 1.5rem;
+            }
+
+            textarea {
+                height: 100px;
+            }
+        }
+
+
+        .textarea-container {
+            position: relative;
+        }
+
+        .copy-button, .swap-button {
+            position: absolute;
+            bottom: 10px;
+            background: none;
+            border: none;
+            font-size: 20px;
+            color: #007bff;
+            cursor: pointer;
+        }
+
+        .copy-button {
+            right: 10px;
+        }
+
+        .swap-button {
+            left: 10px;
+        }
+
+        .copy-button:hover, .swap-button:hover {
+            color: #0056b3;
+        }
+
+        .copy-button:focus, .swap-button:focus {
+            outline: none;
+        }
+
+        .form-group {
+            position: relative;
+        }
+
+        .dropdown-menu {
+            z-index: 1000; /* Ensure dropdown menu is on top */
+        }
+        .custom-heading p {
+            color: #6c757d; /* Slightly grey color */
+            font-weight: 510; /* Thicker font weight */
+            margin-bottom: 0;
+        }
+
+        .no-style {
+            color: inherit;         /* Remove default link color */
+           
+            text-decoration: none;  /* Remove underline */
+        }
+        .no-style:hover,
+        .no-style:focus,
+        .no-style:visited,
+        .no-style:active {
+            color: inherit;          /* Ensure color is inherited */
+            text-decoration: none;   /* Ensure no underline */
+        }
+    </style>
+</head>
+<body style="padding-left: 15px; padding-right: 15px;">
+    <header>
+        <nav>
+            <div class="container mt-5">
+                <div class="row d-flex align-items-center">
+                    <div class="col-6 text-left">
+                        <a href="/" class="no-style"><h3 class="m-0"><b>AroTranslate</b></h3></a>
+                    </div>
+                    <div class="col-6 d-flex justify-content-end align-items-center">
+                        
+                        <div class="dropdown me-3">
+                            <a class="nav-link dropdown-toggle" href="#" id="dropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                English
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                <li><a class="dropdown-item active" href="#" onclick="setLang('en')">English</a></li>
+                                <li><a class="dropdown-item" href="#" onclick="setLang('rup')">Armãnã</a></li>
+                                <li><a class="dropdown-item" href="#" onclick="setLang('ron')">Românǎ</a></li>
+                            </ul>
+                        </div>
+                        <a href="/about" class="custom-heading"><p id="about-us">About Us</p></a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div class="container mt-5">
+            <div class="row align-items-center">
+                <div class="col-md-9">
+                    <h2 style="margin-bottom: 0;">About AroTranslate</h2>
+                    <small style="margin-top: 0;"><small>This page is momentarily only available in English.</small></small>
+                    <p>
+                        Aromanian is a unique and endangered Romance language* spoken by over 300,000 people in the Balkans. Despite its rich cultural significance, it is often overlooked in the digital world. The goal of AroTranslate is to help make Aromanian more accessible and engaging through state-of-the-art translation technology. 
+                    </p>
+                    <p>
+                        The lack of government funding and support for the Aromanian culture and tongue is concerning. Through this project, we also aim to raise awareness and advocate for increased recognition and support.
+                    </p>
+                    <p>
+                        Learn more about AroTranslate on <a href="https://github.com/lolismek/AroTranslate/tree/main">Github</a> or <a href="#">Huggingface</a>.
+                    </p>
+                    <p>
+                        We are dedicated to supporting the Aromanian community and encourage anyone interested in contributing or learning more to get in touch with us at <a href="mailto:alex.jerpelea@gmail.com">alex.jerpelea@gmail.com</a>. 
+                    </p>
+                    <small>*The status of Aromanian as either independent language or Romanian dialect is a heated debate with political implications on both sides. The first view is mainly adopted by modern Romance research at the international level, while the latter is traditionally accepted by Romanian linguists and the pre-war generation. At <i>AroTranslate</i>, we do not officially adhere to any view, but we do refer to Aromanian as a <i>language</i> for simplicity and practicability. We encourage the users to read more about this topic and form a view of their own. We recommend and cite <a href="https://www.researchgate.net/publication/356299385_Aromanian_-_Language_or_Dialect_Overview_of_Historical_and_Contemporary_Opinions">this</a> article. At the end of the day, <i>"the Aromanians have been striving merely to preserve their identity, culture and mother-tongue"</i>, and we support this cause.</small>
+                    <br><br>
+                    <h3>Partners and Supporters</h3>
+                    <p>
+                    This project was conducted by <a href="https://www.linkedin.com/in/alexandru-iulius-jerpelea-5828b2181/">Alexandru-Iulius Jerpelea</a>. 
+                    However, there were other parties involved, for which we are deeply grateful:
+                    </p>
+                    <ul>
+                        <li><a href="https://nlp.unibuc.ro">Human Languages Technologies Research Center</a>, <a href="https://nlp.unibuc.ro/people/snisioi.html">Sergiu Nisioi</a> - for computation resources, technical contributions, and the collaboration for a technical paper about this Aromanian translation system.</li>
+                        <li><a href="https://aromanii.ro/sutsata/index.html">The Aromanian Cultural Society from Romania</a> - for helping with the data collection, model evaluation processes, and visibility.</li>
+                    </ul>
+                </div>
+                
+                <div class="col-md-3 d-flex justify-content-center align-items-center mb-3" style="height: 100%;">
+                    <figure class="text-center">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/7/7d/Vlach_Shepherd.png" alt="Aromanian shepherd in traditional clothes from 1899" class="img-fluid">
+                        <figcaption><small><i>Aromanian shepherd in traditional clothes, 1899 (Wikipedia)</i></small></figcaption>
+                    </figure>
+                </div>
+            </div>
+        </div>
+
+        <div class="container mt-5 mb-3" style="margin-top: 20px;">
+            <div class="row align-items-center">
+                <div class="col-md-2 d-flex justify-content-center align-items-center mb-3" style="height: 100%;">
+                    <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">
+                        <img alt="Creative Commons License" style="border-width:0; margin-bottom: 10px;" 
+                        src="https://i.creativecommons.org/l/by-nc/4.0/88x31.png" />
+                    </a>
+                </div>
+
+                <div class="col-md-10">
+                    This work is licensed under a 
+                    <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">
+                    Creative Commons Attribution-NonCommercial 4.0 International License.
+                    </a>  When using any part of AroTranslate, please credit it as "AroTranslate", including the author.
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>        
+        <p style="text-align: center; color: grey;">
+            Made with <span style="color: red;">&#10084;</span> 
+        </p>
+    </footer>    
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="script.js"></script>
+    <script>
+        function setLang(lang) {
+            console.log("!!")
+            let contents = {
+                "ron": {
+                    "about-us": "Despre Noi"
+                },
+                "rup": {  
+                    "about-us": "Ti Noi" 
+                },
+                "en": {  
+                    "about-us": "About Us"
+                }
+            }
+        
+            ids = ["about-us"]
+            for (var i = 0; i < ids.length; i++){
+                if (ids[i] == "inputText" || ids[i] == "outputText"){
+                    var thing = document.getElementById(ids[i])
+                    console.log(thing)
+                    thing.setAttribute('placeholder', contents[lang][ids[i]])
+                }else{
+                    var thing = document.getElementById(ids[i])
+                    thing.textContent = contents[lang][ids[i]]
+                }
+            }
+        }
+
+        $(document).ready(function() {
+            $('.dropdown-toggle').on('click', function() {
+                var $this = $(this);
+                var $dropdownMenu = $this.next('.dropdown-menu');
+                
+                $dropdownMenu.toggleClass('show');
+                
+                $(document).on('click', function(e) {
+                    if (!$this.is(e.target) && $this.has(e.target).length === 0) {
+                        $dropdownMenu.removeClass('show');
+                    }
+                });
+            });
+
+            $('.dropdown-item').on('click', function() {
+                var $this = $(this);
+                var $dropdownToggle = $this.closest('.dropdown').find('.dropdown-toggle');
+                $dropdownToggle.text($this.text());
+                $dropdownToggle.data('value', $this.data('value'));
+            });
+        });
+    </script>
+</body>
+</html>
