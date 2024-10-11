@@ -1,5 +1,7 @@
 # The first neural machine translation system for the Aromanian Language
 
+!!! This documentation is old, and the project evolved since. For more information, please see our paper: (link soon), on track for publication.
+
 Aromanian is an endagered Romance language spoken in the Balkans, similar to Romanian. 
 We present the first comprehensive Aromanian Translator, a 100k+ sentences aromanian - romanian corpus, and other deliverables, in support of the Aromanian tongue and its speakers. 
 <div align="center">
